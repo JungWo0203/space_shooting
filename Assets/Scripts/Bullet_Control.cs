@@ -19,8 +19,11 @@ public class Bullet_Control : MonoBehaviour
        
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "OutLine")
+        {
+            Destroy(gameObject);
+        }
     }
 }
